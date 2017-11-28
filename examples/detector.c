@@ -364,8 +364,10 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
 {
     int j;
     list *options = read_data_cfg(datacfg);
-    char *valid_images = option_find_str(options, "valid", "data/train.list");
-    char *name_list = option_find_str(options, "names", "data/names.list");
+    // char *valid_images = option_find_str(options, "valid", "data/train.list");
+    char *valid_images = option_find_str(options, "valid", "data/1024_imagePaths.txt");
+    // char *name_list = option_find_str(options, "names", "data/names.list");
+    char *name_list = option_find_str(options, "names", "data/coco.names");
     char *prefix = option_find_str(options, "results", "results");
     char **names = get_labels(name_list);
     char *mapf = option_find_str(options, "map", 0);
